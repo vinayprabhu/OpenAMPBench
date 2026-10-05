@@ -1,0 +1,62 @@
+[
+  {
+    "id": "spear", "name": "SPEAR", "category": "Cryptomics",
+    "full_name": "Segmentation of Peptides for Encrypted Antimicrobial Revelation",
+    "summary": "Learn where to cut a protein to reveal promising antimicrobial fragments.",
+    "question": "Can learned segmentation reduce the search space created by exhaustive sliding windows?",
+    "description": "The reference workflow enumerates contiguous fragments of lengths 8–50, scores them with MIC predictors, then filters by predicted activity and sequence distance. SPEAR proposes learning useful boundaries directly, including joint segmentation and classification.",
+    "objectives": ["Establish an exhaustive enumeration baseline with explicit compute and candidate counts.", "Train a segmentation model to propose cryptides from source sequences.", "Compare joint segmentation and classification against the exhaustive baseline."],
+    "outputs": ["Parent-to-fragment mappings", "Segmentation notebooks", "Candidate-ranking and compute comparisons"],
+    "related": ["ampversity", "damp"], "links": []
+  },
+  {
+    "id": "zampa", "name": "ZAMPA", "category": "Generation",
+    "full_name": "Zero-shot AntiMicrobial Peptide generation using Artificial Intelligence",
+    "summary": "Test how far frontier models can get by generating peptides from prompts alone.",
+    "question": "What can a citizen scientist discover using only zero-shot prompting of frontier models?",
+    "description": "ZAMPA investigates zero-shot AMP generation. Candidate sequences are assessed for predicted antimicrobial activity, agreement across AMP classifiers, distance from known sequences, and predicted toxicity or haemolysis. The central claim remains a hypothesis to evaluate.",
+    "objectives": ["Record prompts, model versions and generated sequences.", "Evaluate predicted MIC, AMP classification, novelty and toxicity.", "Keep computational predictions distinct from experimental evidence."],
+    "outputs": ["Prompt and generation records", "Candidate libraries", "Novelty and prediction reports"],
+    "related": ["ampversity", "damp"], "links": []
+  },
+  {
+    "id": "vampire", "name": "VAMPIRE", "category": "Venom discovery",
+    "full_name": "Venomic Anti Microbial Peptide In-silico Research Engine",
+    "summary": "Explore venom-derived fragments, their neighbours, and new sequence designs.",
+    "question": "Can venom-encrypted peptides seed a productive computational search for AMPs?",
+    "description": "VAMPIRE proposes extending published venom-encrypted peptide work, collecting the resulting candidates into a venom reference set, and exploring neighbours in sequence representations. Generative models and search strategies would then be compared using predicted activity.",
+    "objectives": ["Assemble a traceable venom-encrypted peptide reference set.", "Explore neighbours in representation space.", "Compare generative models, concatenation and simulated annealing."],
+    "outputs": ["Venom reference sequences", "Interactive embedding views", "Generation and search experiments"],
+    "related": ["spear", "ampversity", "damp"], "links": []
+  },
+  {
+    "id": "ampversity", "name": "AMPversity", "category": "Data",
+    "full_name": "A unified antimicrobial peptide reference dataset",
+    "summary": "Bring scattered AMP datasets and literature-derived sequences into one reference.",
+    "question": "How can a unified reference support credible novelty assessment?",
+    "description": "AMPversity is the proposed shared dataset across the programme. It brings together existing AMP resources and sequences extracted from publications by pAMPerclip, preserving provenance so researchers can inspect where each sequence and annotation came from.",
+    "objectives": ["Harmonise sequences from existing AMP resources.", "Integrate literature-derived records from pAMPerclip.", "Track provenance and make reference releases reproducible."],
+    "outputs": ["Versioned reference tables", "Source and provenance records", "Dataset assembly notebooks"],
+    "related": ["pamperclip", "damp", "zampa"], "links": []
+  },
+  {
+    "id": "pamperclip", "name": "pAMPerclip", "category": "Literature",
+    "full_name": "Extracting antimicrobial peptides from the literature",
+    "summary": "Recover peptide records from papers and carry their evidence into AMPversity.",
+    "question": "Which published AMP sequences remain outside existing reference databases?",
+    "description": "pAMPerclip proposes using the Paperclip API to extract AMP records from academic papers. Its contribution to AMPversity is a literature-derived set whose sequences, annotations and supporting sources can be checked.",
+    "objectives": ["Extract candidate peptide records from publications.", "Retain source references and inspect extraction quality.", "Merge checked records into AMPversity."],
+    "outputs": ["Literature extraction notebooks", "Source-linked peptide records", "Extraction review notes"],
+    "related": ["ampversity"], "links": []
+  },
+  {
+    "id": "damp", "name": "DAMP", "category": "Evaluation",
+    "full_name": "Disagreements amongst AMP Model Predictions",
+    "summary": "Measure where AMP classifiers and MIC regressors agree, and where they diverge.",
+    "question": "When do AMP models disagree, and can their differences support a better ensemble?",
+    "description": "DAMP compares models trained on different datasets, objectives and architectures. It examines agreement by strain, differences between model versions such as APEX 1.0 and 1.1, and the possibility of meta-classifiers or meta-regressors.",
+    "objectives": ["Compare model predictions on a shared sequence panel.", "Measure agreement by model, version and bacterial strain.", "Evaluate whether ensemble models improve held-out performance."],
+    "outputs": ["Prediction tables", "Agreement and disagreement notebooks", "Strain-aware comparison figures"],
+    "related": ["ampversity", "spear", "zampa", "vampire"], "links": []
+  }
+]

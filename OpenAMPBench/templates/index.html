@@ -1,0 +1,22 @@
+{% extends 'base.html' %}{% block content %}
+<p class="eyebrow">Open research / Antimicrobial peptides</p>
+<h1>A research programme in six parts.</h1>
+<p class="intro">From published peptide sequences to new computational candidates.<br>Datasets, experiments and methods, with the work open to inspection.</p>
+<div class="index-layout"><section aria-labelledby="projects-title">
+  <div class="section-bar"><h2 id="projects-title">Projects</h2><span>01–06</span></div>
+  {% for p in projects %}<article class="project-row"><span class="ordinal">{{ '%02d'|format(loop.index) }}</span><div>
+    <div class="row-top"><h3><a href="projects/{{ p.id }}.html">{{ p.name }}</a></h3><span class="category">{{ p.category }}</span></div>
+    <p>{{ p.summary }}</p>
+    {% if p.notebooks or p.figures %}<p class="row-links">{% if p.notebooks %}<a href="notebooks/index.html?project={{ p.id }}">{{ p.notebooks|length }} notebook{% if p.notebooks|length != 1 %}s{% endif %}</a>{% endif %}{% if p.figures %}<a href="figures/index.html?project={{ p.id }}">{{ p.figures|length }} figure{% if p.figures|length != 1 %}s{% endif %}</a>{% endif %}</p>{% endif %}
+  </div></article>{% endfor %}
+</section><aside class="index-aside">
+  <section class="aside-block"><h2>How the work connects</h2><ul>
+    <li><span class="step">01</span> Assemble the evidence<small>pAMPerclip · AMPversity</small></li>
+    <li><span class="step">02</span> Compare the predictors<small>DAMP</small></li>
+    <li><span class="step">03</span> Search for candidates<small>SPEAR · ZAMPA · VAMPIRE</small></li>
+  </ul></section>
+  <section class="aside-block"><h2>About this record</h2><p>Project descriptions set out the research questions and intended outputs. Results will be published alongside their notebooks and source data.</p><p>Predicted activity and experimental measurements are reported separately.</p></section>
+  <section class="aside-block"><h2>Browse the work</h2><ul><li><a href="notebooks/index.html">Computational notebooks</a></li><li><a href="figures/index.html">Interactive figures</a></li><li><a href="notes/index.html">Notes &amp; methods</a></li></ul></section>
+</aside></div>
+{% if notebooks or figures %}<div class="resource-strip">{% if notebooks %}<article><span class="label">NOTEBOOK / {{ notebooks[0].project_name }}</span><h3><a href="{{ notebooks[0].url }}">{{ notebooks[0].title }}</a></h3><p>{{ notebooks[0].description }}</p></article>{% endif %}{% if figures %}<article><span class="label">INTERACTIVE FIGURE / {{ figures[0].project_name }}</span><h3><a href="{{ figures[0].url }}">{{ figures[0].title }}</a></h3><p>{{ figures[0].description }}</p></article>{% endif %}</div>{% endif %}
+{% endblock %}

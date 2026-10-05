@@ -1,0 +1,8 @@
+{
+  "title": "OpenAMPBench",
+  "description": "Datasets, models and computational experiments for antimicrobial peptide research.",
+  "repository": "https://github.com/vinayprabhu/OpenAMPBench",
+  "branch": "main",
+  "url": "https://vinayprabhu.github.io/OpenAMPBench/",
+  "author": "Vinay Prabhu"
+}

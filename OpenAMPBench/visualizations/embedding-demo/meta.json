@@ -1,0 +1,11 @@
+{
+  "title": "A three-dimensional embedding",
+  "description": "A small, synthetic point cloud demonstrating rotation, hover and group selection.",
+  "project": "damp",
+  "kind": "html",
+  "example": true,
+  "format_label": "3D / Plotly",
+  "caption": "240 synthetic points across three groups. Axes are arbitrary coordinates, not measured peptide properties. No embedding model was used.",
+  "load_note": "Rotate, inspect individual points and toggle groups in the legend.",
+  "notebook_url": "notebooks/view/damp/reading-predictions.html"
+}

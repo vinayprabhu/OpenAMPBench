@@ -1,0 +1,10 @@
+{% extends 'base.html' %}{% block content %}
+<p class="breadcrumb"><a href="{{ root }}index.html">Projects</a> / {{ project.name }}</p><p class="eyebrow">{{ project.category }} / Research plan</p><h1>{{ project.name }}</h1><p class="full-name">{{ project.full_name }}</p>
+<div class="article-layout"><article class="article-copy"><p class="question">{{ project.question }}</p><p>{{ project.description }}</p>
+<h2>Planned work</h2><ol>{% for item in project.objectives %}<li>{{ item }}</li>{% endfor %}</ol>
+<h2>Notebooks</h2>{% set entries = project.notebooks %}{% include 'resources.html' %}
+<h2>Interactive figures</h2>{% set entries = project.figures %}{% include 'resources.html' %}
+{% if project.notes %}<h2>Notes</h2>{% set entries = project.notes %}{% include 'resources.html' %}{% endif %}
+</article><aside class="article-aside"><section class="aside-block"><h2>Intended outputs</h2><ul>{% for item in project.outputs %}<li>{{ item }}</li>{% endfor %}</ul></section><section class="aside-block"><h2>Related projects</h2><ul>{% for id in project.related %}<li><a href="{{ id }}.html">{{ project_map[id].name }}</a></li>{% endfor %}</ul></section>
+{% if project.links %}<section class="aside-block"><h2>Resources</h2><ul>{% for link in project.links %}<li><a href="{{ link.url }}">{{ link.title }}</a></li>{% endfor %}</ul></section>{% endif %}
+</aside></div>{% endblock %}

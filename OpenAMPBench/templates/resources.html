@@ -1,0 +1,1 @@
+{% if entries %}<ul class="resource-list">{% for item in entries %}<li><a href="{{ root }}{{ item.url }}">{{ item.title }}</a><p>{{ item.description }}</p>{% if item.example %}<small>Demonstration · Synthetic data</small>{% endif %}</li>{% endfor %}</ul>{% else %}<p class="empty">No entries published yet.</p>{% endif %}

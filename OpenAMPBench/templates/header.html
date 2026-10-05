@@ -1,0 +1,10 @@
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header shell">
+  <a class="brand" href="{{ root }}index.html">Open<span>AMPs</span></a>
+  <nav class="site-nav" aria-label="Main navigation">
+    {% for label, path, key in [('Projects','index.html','projects'),('Notebooks','notebooks/index.html','notebooks'),('Figures','figures/index.html','figures'),('Notes','notes/index.html','notes')] %}
+    <a href="{{ root }}{{ path }}"{% if section == key %} aria-current="page"{% endif %}>{{ label }}</a>
+    {% endfor %}
+    {% if site.repository %}<a href="{{ site.repository }}">GitHub</a>{% endif %}
+  </nav>
+</header>

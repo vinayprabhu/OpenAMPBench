@@ -1,0 +1,7 @@
+{% extends 'base.html' %}{% block content %}<p class="breadcrumb"><a href="{{ root }}figures/index.html">Figures</a> / {{ figure.project_name }}</p><p class="eyebrow">{{ figure.project_name }} / {{ figure.kind }}{% if figure.example %} / Demonstration{% endif %}</p><h1>{{ figure.title }}</h1><p class="intro">{{ figure.description }}</p>
+<section class="figure-surface" data-viewer data-src="{{ figure.src }}" data-kind="{{ figure.kind }}" data-scene="{{ figure.scene }}" aria-label="Interactive figure">
+<div class="viewer-tools"><span class="label">{{ figure.format_label }}</span><a class="button" href="{{ figure.src }}" data-open-viewer target="_blank" rel="noopener">Open separately</a><button data-fullscreen>Fullscreen</button><button data-unload-viewer hidden>Unload figure</button></div>
+<div class="figure-placeholder"><h2>Explore the figure</h2><p>{{ figure.load_note }}</p><button data-load-viewer>Load interactive figure</button></div><iframe title="{{ figure.title }}" hidden allow="fullscreen" allowfullscreen></iframe>
+</section><p class="caption">{{ figure.caption }}</p>{% if figure.example %}<p class="note">Synthetic demonstration data. This figure does not report a biological result.</p>{% endif %}
+<noscript><p>JavaScript is required to load the embedded viewer. {% if figure.src %}<a href="{{ figure.src }}">Open the standalone figure.</a>{% endif %}</p></noscript>
+{% if figure.notebook_url %}<p><a href="{{ root }}{{ figure.notebook_url }}">Read the accompanying notebook</a></p>{% endif %}{% endblock %}

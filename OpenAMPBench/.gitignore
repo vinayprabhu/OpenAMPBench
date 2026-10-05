@@ -1,0 +1,6 @@
+_site/
+.build-cache/
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
